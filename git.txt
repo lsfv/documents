@@ -1,0 +1,5 @@
+windows client:
+mkdir 
+git init
+$ remote add origin https://github.com/lsfv/documents.git
+ssh-keygen
