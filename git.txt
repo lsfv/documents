@@ -1,44 +1,43 @@
-Git³£ÓÃ²Ù×÷ (²İ¸å)
+Gitå¸¸ç”¨æ“ä½œ (è‰ç¨¿)
 go
 
-1.install git °²×°git
+1.install git å®‰è£…git
 $ git	(windows:https://git-scm.com/downloads)
 
-1.5 create ssh¹«Ô¿,²¢Ìí¼Óµ½·şÎñÆ÷ÉÏ.
+1.5 create sshå…¬é’¥,å¹¶æ·»åŠ åˆ°æœåŠ¡å™¨ä¸Š.
 
-2.config your name and email. ÔÚ±¾»úÅäÖÃÄãµÄĞÅÏ¢ 
+2.config your name and email. åœ¨æœ¬æœºé…ç½®ä½ çš„ä¿¡æ¯ 
 $ git config --global user.name "your name"
 $ git config --global user.email "your email@xxx.xxx"
 
 
-3.1 ´Ó·şÎñÆ÷clone Ò»¸ö¿â
-cd ,½øÈëÄã´æ·Å¿âµÄ±¾µØÂ·¾¶.
+3.1 ä»æœåŠ¡å™¨clone ä¸€ä¸ªåº“
+cd ,è¿›å…¥ä½ å­˜æ”¾åº“çš„æœ¬åœ°è·¯å¾„.
 $ git clone git@10.0.3.200:/home/git/code/ShareDocuments.git
 
-3.2 create repository ´´½¨±¾µØ²Ö¿â
+3.2 create repository åˆ›å»ºæœ¬åœ°ä»“åº“
 $ mkdir xxx
 $ cd xxx
 $ git init --bare test.git
 
 
-
-4.ĞÂÎÄ¼ş»ò¸ü¸Ä ·ÅÈë±¾µØ²Ö¿â
+4.æ–°æ–‡ä»¶æˆ–æ›´æ”¹ æ”¾å…¥æœ¬åœ°ä»“åº“
 $ git add xxxxx.xxx
 (no news is good news....)
 $ git commit -m "remark"
 
 
-5.³£ÓÃÃüÁî
+5.å¸¸ç”¨å‘½ä»¤
 git status
 git reset --hard (commit id)
 git log
 git reflog
-git checkout -- file    ¹¤×÷Çø·µ»Øµ½×îºóÒ»´Î  commit or add. ²¢¿ÉÓÃÓÚ»Ö¸´ÎóÉ¾³ıÎÄµµ(Ç°ÌáÊÇcommit ¹ı.)
+git checkout -- file    å·¥ä½œåŒºè¿”å›åˆ°æœ€åä¸€æ¬¡  commit or add. å¹¶å¯ç”¨äºæ¢å¤è¯¯åˆ é™¤æ–‡æ¡£(å‰ææ˜¯commit è¿‡.)
 
-6.ÍÆËÍµ½Ô¶³Ì¿â.
-ÏÈ¹ØÁªÔ¶³Ì¿â,Ò²¾ÍÊÇËõĞ´µØÖ·   git remote add osd git@10.0.3.200:/home/git/code/ShareDocuments.git
-µÚÒ»´ÎÍÆËÍ push: git push -u osd master
-ºóÆÚpush : git push osd master
+6.æ¨é€åˆ°è¿œç¨‹åº“.
+å…ˆå…³è”è¿œç¨‹åº“,ä¹Ÿå°±æ˜¯ç¼©å†™åœ°å€   git remote add osd git@10.0.3.200:/home/git/code/ShareDocuments.git
+ç¬¬ä¸€æ¬¡æ¨é€ push: git push -u osd master
+åæœŸpush : git push osd master
 
 
 7.pull
@@ -46,8 +45,8 @@ git pull
 
 
 
-8.³åÍ»
-¾¡Á¿²»ÒªÍ¬Ê±ĞŞ¸ÄÒ»¸öÎÄ¼ş£¬ÊÖ¹¤ºÏ²¢ºÄÊ±¼ä¡£
+8.å†²çª
+å°½é‡ä¸è¦åŒæ—¶ä¿®æ”¹ä¸€ä¸ªæ–‡ä»¶ï¼Œæ‰‹å·¥åˆå¹¶è€—æ—¶é—´ã€‚
 delfile
 <<<<<<< HEAD
 int addInt(int a,int b)
@@ -63,7 +62,7 @@ int mulit(int a,int b)
 
 
 9.test dev.
-bugÒÑ¾­ĞŞ¸´¡£
+bugå·²ç»ä¿®å¤ã€‚
 
 
 9.use
@@ -87,41 +86,74 @@ git push (need you github name and password)
 
 
 
-×î¼ÑÊµ¼ù(³ÖĞø¸üĞÂ):
-1.·şÎñÆ÷master ·ÖÖ§¡£±£ÁôÃ¿¸ö°æ±¾µÄ×îÖÕ°æ±¾£¨»ò×îÖÕ°æ±¾µÄBUGĞŞ¸´°æ£©
-2.·şÎñÆ÷dev ·ÖÖ§£¬±£Áô¿ª·¢ÖĞµÄ°æ±¾¡£
+æœ€ä½³å®è·µ(æŒç»­æ›´æ–°):
+new project.
+1.1 create  master branch.
+	mkdir capturedata
+	cd capturedata
+	git clone git@10.0.3.200:/home/git/code/client_captureData.git
+	cd client_captureData/
+	åœ¨æœ¬åœ°captureDataï¼Œæ–°å»ºä¸€ä¸ªReadme.txt è¯´æ˜æ–‡æ¡£ã€‚
+	git add .
+	git commit . -m "xxx"
+	git push
+	
+1.2 create dev branch.
+	git checkout -b dev
+	æ‹·è´é¡¹ç›®çš„ç›®å‰è¿›åº¦çš„æ–‡ä»¶åˆ°æœ¬åœ°çš„åº“ç›®å½•ï¼Œå¦‚ï¼šcapturedata
+	git branch  ç¡®å®šå½“å‰åˆ†æ”¯å¤„äºdev.
+	git add .   ä½¿å¾— untraced  æ–‡æ¡£ç”± devç‰ˆæœ¬è·Ÿè¸ªã€‚
+	git commit . -m "xxx"
+	
+	git remote add origin_u3d git@10.0.3.200:/home/git/code/client_u3d.git
+	git push --set-upstream origin_u3d dev   æ¨é€æœ¬åœ°åˆ†æ”¯åˆ°è¿œç¨‹ã€‚
+	
+	
+2.1 get project
+	mkdir capturedata
+	cd capturedata/
+	git clone git@10.0.3.200:/home/git/code/client_captureData.git
+	cd client_captureData/
 
-????????????ÊÇ·ñclone ºó£¬»á°üÀ¨SERVERÉÏµÄËùÓĞ·ÖÖ§?
-2.´Ó·şÎñÆ÷CLONE°æ±¾ºó£¬´´½¨DEV°æ±¾£¨»ò´Ó·şÎñÆ÷clone dev°æ±¾£¬£©ËùÓĞµÄ¿ª·¢¶¼ÔÚ×Ô¼ºµÄdevÉÏ£¬ÈÕ³£¹¤×÷Ö»ĞèaddºÍcommitµ½dev°æ±¾ÉÏ¡£
-4.Ã¿ÈÕ´ÓdevÉÏpull×îĞÂ´úÂë£¬²¢½øĞĞ¿ª·¢¡£
-3.Ğ¡½×¶ÎÈÎÎñÍê³É£¬²¢²âÊÔºó£¬pushµ½devÉÏ¡£Î´²âÊÔ´úÂë£¬±£´æµ½±¾µØDEV£¬²»ÒªPUSHµ½server µÄdevÉÏ¡£
-3.Ö»ÓĞ¿ª·¢ºÍ²âÊÔÈ«²¿Íê±Ï£¬pull dev, ½øÈëmaster,ºÏ²¢dev.²¢pushµ½Ô¶³Ì·şÎñÆ÷masterÉÏ¡£
-4.·şÎñÆ÷masterĞèÒªbugĞŞ¸´£º
-  4.1 ÇĞ»»µ½master git checkout master
-  4.2 ÏÈ¸üĞÂÏÂgit pull
-  4.2 ´´Á¢,²¢½øÈëbug bug ·ÖÖ§ git checkout -b bug-1
-  4.3 ĞŞ¸´bug
-  4.4 Ìá½»²¢ºÏ²¢µ½master,²¢·µ»Øµ½ÈÕ³£DEV ¿ª·¢ : 
+2.2
+	git remote add origin_u3d git@10.0.3.200:/home/git/code/client_u3d.git
+	git pull origin_u3d dev:dev
+	git checkout dev
+
+
+1.æœåŠ¡å™¨master åˆ†æ”¯ã€‚ä¿ç•™æ¯ä¸ªç‰ˆæœ¬çš„æœ€ç»ˆç‰ˆæœ¬ï¼ˆæˆ–æœ€ç»ˆç‰ˆæœ¬çš„BUGä¿®å¤ç‰ˆï¼‰
+2.æœåŠ¡å™¨dev åˆ†æ”¯ï¼Œä¿ç•™å¼€å‘ä¸­çš„ç‰ˆæœ¬ã€‚
+
+2.ä»æœåŠ¡å™¨CLONEç‰ˆæœ¬åï¼Œåˆ›å»ºDEVç‰ˆæœ¬ï¼ˆæˆ–ä»æœåŠ¡å™¨clone devç‰ˆæœ¬ï¼Œï¼‰æ‰€æœ‰çš„å¼€å‘éƒ½åœ¨è‡ªå·±çš„devä¸Šï¼Œæ—¥å¸¸å·¥ä½œåªéœ€addå’Œcommitåˆ°devç‰ˆæœ¬ä¸Šã€‚
+4.æ¯æ—¥ä»devä¸Špullæœ€æ–°ä»£ç ï¼Œå¹¶è¿›è¡Œå¼€å‘ã€‚
+3.å°é˜¶æ®µä»»åŠ¡å®Œæˆï¼Œå¹¶æµ‹è¯•åï¼Œpushåˆ°devä¸Šã€‚æœªæµ‹è¯•ä»£ç ï¼Œä¿å­˜åˆ°æœ¬åœ°DEVï¼Œä¸è¦PUSHåˆ°server çš„devä¸Šã€‚
+3.åªæœ‰å¼€å‘å’Œæµ‹è¯•å…¨éƒ¨å®Œæ¯•ï¼Œpull dev, è¿›å…¥master,åˆå¹¶dev.å¹¶pushåˆ°è¿œç¨‹æœåŠ¡å™¨masterä¸Šã€‚
+4.æœåŠ¡å™¨masteréœ€è¦bugä¿®å¤ï¼š
+  4.1 åˆ‡æ¢åˆ°master git checkout master
+  4.2 å…ˆæ›´æ–°ä¸‹git pull
+  4.2 åˆ›ç«‹,å¹¶è¿›å…¥bug bug åˆ†æ”¯ git checkout -b bug-1
+  4.3 ä¿®å¤bug
+  4.4 æäº¤å¹¶åˆå¹¶åˆ°master,å¹¶è¿”å›åˆ°æ—¥å¸¸DEV å¼€å‘ : 
 		git add . 
 		git commit . -m   
 		git checkout master
 		git merge bug
 		git push
 		git checkout dev
-5.ÈÕ³£²Ù×÷£º
-  5.1 git branch È·¶¨´¦ÓÚ dev ·ÖÖ§
-  5.2 git pull£¬¸üĞÂÆäËû»ï°éÒÑ¾­²âÊÔ²¢Ìá½»µÄµÄ´úÂë,²¢¼õÉÙ³åÍ»¸ÅÂÊ(Èç¹û¸ÕºÃĞŞ¸Ä»ï°éÒÑ¾­¸üĞÂµÄÎÄ¼ş)¡£
-  5.2 ÈÕ³£¿ª·¢³£ÓÃ add . commit . -m £¬±ÜÃâÊı¾İÎ´²åÈëDEVÊ±£¬·¢ÉúµÄÒâÍâÇé¿ö¡£
-  5.3 Íê³É²¢²âÊÔºó,git push
-  5.3 ¾¡Á¿¶¨Ê±½øÈëmaster£¬²é¿´ÊÇ·ñÓĞbugĞŞ¸´ÁË£¬²¢±£³ÖÍ¬²½. git checkout master ,git pull . git checkout dev
+5.æ—¥å¸¸æ“ä½œï¼š
+  5.1 git branch ç¡®å®šå¤„äº dev åˆ†æ”¯
+  5.2 git pullï¼Œæ›´æ–°å…¶ä»–ä¼™ä¼´å·²ç»æµ‹è¯•å¹¶æäº¤çš„çš„ä»£ç ,å¹¶å‡å°‘å†²çªæ¦‚ç‡(å¦‚æœåˆšå¥½ä¿®æ”¹ä¼™ä¼´å·²ç»æ›´æ–°çš„æ–‡ä»¶)ã€‚
+  5.2 æ—¥å¸¸å¼€å‘å¸¸ç”¨ add . commit . -m ï¼Œé¿å…æ•°æ®æœªæ’å…¥DEVæ—¶ï¼Œå‘ç”Ÿçš„æ„å¤–æƒ…å†µã€‚
+  5.3 å®Œæˆå¹¶æµ‹è¯•å,git push
+  5.3 å°½é‡å®šæ—¶è¿›å…¥masterï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰bugä¿®å¤äº†ï¼Œå¹¶ä¿æŒåŒæ­¥. git checkout master ,git pull . git checkout dev
 
 
-6.´íÎóÌ«¶à,Ö±½Ó·µ»Øµ½ commit µÄÀúÊ·°æ±¾.git reset --hard (commit id),
+6.é”™è¯¯å¤ªå¤š,ç›´æ¥è¿”å›åˆ° commit çš„å†å²ç‰ˆæœ¬.git reset --hard (commit id),
 
 
-7. ³åÍ»µÄ½â¾ö£º
-1.´¦Àí³åÍ»¡£
-Ô­Ôò£ºĞÅÈÎ×Ô¼ººÍ±ğÈË´úÂë,²¢Ë«·½¹µÍ¨¡£¿Í¹ÛÎŞ·¨¹µÍ¨,×ö·¨£º¸ù¾İ³åÍ»ÌáÊ¾£¬±£Áô±ğÈË´úÂë£¬Èç¹ûÇ¡ÇÉĞèÒªÌæ»»±ğÈË´úÂë£¬±ØĞëÏÈ×¢ÊÍ±ğÈË´úÂë£¬¶ø²»ÊÇÉ¾³ı¡£µÈ¹µÍ¨Ö®ºóÔÙÉ¾³ı×¢ÊÍºÍ¶àÓà´úÂë¡£
-2.·ÅÆú×Ô¼º¸ü¸Ä¡£
+7. å†²çªçš„è§£å†³ï¼š
+1.å¤„ç†å†²çªã€‚
+åŸåˆ™ï¼šä¿¡ä»»è‡ªå·±å’Œåˆ«äººä»£ç ,å¹¶åŒæ–¹æ²Ÿé€šã€‚å®¢è§‚æ— æ³•æ²Ÿé€š,åšæ³•ï¼šæ ¹æ®å†²çªæç¤ºï¼Œä¿ç•™åˆ«äººä»£ç ï¼Œå¦‚æœæ°å·§éœ€è¦æ›¿æ¢åˆ«äººä»£ç ï¼Œå¿…é¡»å…ˆæ³¨é‡Šåˆ«äººä»£ç ï¼Œè€Œä¸æ˜¯åˆ é™¤ã€‚ç­‰æ²Ÿé€šä¹‹åå†åˆ é™¤æ³¨é‡Šå’Œå¤šä½™ä»£ç ã€‚
+2.æ”¾å¼ƒè‡ªå·±æ›´æ”¹ã€‚
 git pull
 git reset --hard osd/master
