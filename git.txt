@@ -1,8 +1,15 @@
 windows client:
+New:
 install git
 mkdir 
 git init
 $ remote add origin https://github.com/lsfv/documents.git
 ssh-keygen
 add sshkey to github
+git push (need you github name and password)
+
+
+Use:
+mkdir
+git clone https://github.com/lsfv/documents.git
 git push (need you github name and password)
