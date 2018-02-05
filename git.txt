@@ -1,3 +1,73 @@
+Git常用操作 (草稿)
+go
+
+1.install git 安装git
+$ git	(windows:https://git-scm.com/downloads)
+
+1.5 create ssh公钥,并添加到服务器上.
+
+2.config your name and email. 在本机配置你的信息 
+$ git config --global user.name "your name"
+$ git config --global user.email "your email@xxx.xxx"
+
+
+3.1 从服务器clone 一个库
+cd ,进入你存放库的本地路径.
+$ git clone git@10.0.3.200:/home/git/code/ShareDocuments.git
+
+3.2 create repository 创建本地仓库
+$ mkdir xxx
+$ cd xxx
+$ git init --bare test.git
+
+
+
+4.新文件或更改 放入本地仓库
+$ git add xxxxx.xxx
+(no news is good news....)
+$ git commit -m "remark"
+
+
+5.常用命令
+git status
+git reset --hard (commit id)
+git log
+git reflog
+git checkout -- file    工作区返回到最后一次  commit or add. 并可用于恢复误删除文档(前提是commit 过.)
+
+6.推送到远程库.
+先关联远程库,也就是缩写地址   git remote add osd git@10.0.3.200:/home/git/code/ShareDocuments.git
+第一次推送 push: git push -u osd master
+后期push : git push osd master
+
+
+7.pull
+git pull
+
+
+
+8.冲突
+尽量不要同时修改一个文件，手工合并耗时间。
+delfile
+<<<<<<< HEAD
+int addInt(int a,int b)
+{
+	return a+b;
+=======
+
+int mulit(int a,int b)
+{
+	return a*b;
+>>>>>>> 948ac699c4296e9097618d66f83fd5c1a48fa298
+}
+
+
+9.test dev.
+bug已经修复。
+
+
+9.use
+
 windows client:
 New:
 install git
@@ -13,3 +83,45 @@ Use:
 mkdir
 git clone https://github.com/lsfv/documents.git
 git push (need you github name and password)
+
+
+
+
+最佳实践(持续更新):
+1.服务器master 分支。保留每个版本的最终版本（或最终版本的BUG修复版）
+2.服务器dev 分支，保留开发中的版本。
+
+????????????是否clone 后，会包括SERVER上的所有分支?
+2.从服务器CLONE版本后，创建DEV版本（或从服务器clone dev版本，）所有的开发都在自己的dev上，日常工作只需add和commit到dev版本上。
+4.每日从dev上pull最新代码，并进行开发。
+3.小阶段任务完成，并测试后，push到dev上。未测试代码，保存到本地DEV，不要PUSH到server 的dev上。
+3.只有开发和测试全部完毕，pull dev, 进入master,合并dev.并push到远程服务器master上。
+4.服务器master需要bug修复：
+  4.1 切换到master git checkout master
+  4.2 先更新下git pull
+  4.2 创立,并进入bug bug 分支 git checkout -b bug-1
+  4.3 修复bug
+  4.4 提交并合并到master,并返回到日常DEV 开发 : 
+		git add . 
+		git commit . -m   
+		git checkout master
+		git merge bug
+		git push
+		git checkout dev
+5.日常操作：
+  5.1 git branch 确定处于 dev 分支
+  5.2 git pull，更新其他伙伴已经测试并提交的的代码,并减少冲突概率(如果刚好修改伙伴已经更新的文件)。
+  5.2 日常开发常用 add . commit . -m ，避免数据未插入DEV时，发生的意外情况。
+  5.3 完成并测试后,git push
+  5.3 尽量定时进入master，查看是否有bug修复了，并保持同步. git checkout master ,git pull . git checkout dev
+
+
+6.错误太多,直接返回到 commit 的历史版本.git reset --hard (commit id),
+
+
+7. 冲突的解决：
+1.处理冲突。
+原则：信任自己和别人代码,并双方沟通。客观无法沟通,做法：根据冲突提示，保留别人代码，如果恰巧需要替换别人代码，必须先注释别人代码，而不是删除。等沟通之后再删除注释和多余代码。
+2.放弃自己更改。
+git pull
+git reset --hard osd/master
