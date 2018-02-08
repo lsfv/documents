@@ -1,0 +1,118 @@
+svn:地址 https://59.110.157.35:8080/svn
+zhangjing 123456
+
+客户代码吧
+恩。客户端和服务端。放过去。
+不过好大，第依次传好哦
+上传好快工。
+伙草。又慢胃。
+
+在？在
+
+代码规范，很简单。
+变量:   首字母小写
+函数名: 首字母大写 
+
+
+函数，那里也是基本规范。
+
+
+
+以后文档放这儿svn 这里把。
+
+那个VS应该全部装了。我第一次装的时候就全选了
+哦。我是挑着装胡。
+
+yaya8470463
+
+
+网狐对应软件版本：
+1.java jdk      version:7u79.
+2.ant    1.9.6
+2.andriod sdk  这个我忘记 版本号了。你下个2016年出的版本号的应该就没错。
+3.android-ndk ver: r10e
+
+4.cocos studio  ver:3.10
+5.python  ver: 2.7.10
+6.vs 2015 update3
+7.cocos studio v3.10
+
+
+20171111 11:26:20-0602:cp.2596 .CAttemperEngineSink::SendServerListItem         . Line:1325 . Msg:socketid:65536.
+日志模式。时间，分秒，毫秒，服务器名，线城号，函数，行号，参数信息。
+
+
+环境配置。
+
+这个是 cocos软件自己带胡配置脚本。本来要自己配。
+2.本来会自己搜索胡。但是……。
+3.手工填写完。再重新执行配置setup.py.发现ant还是有错误。
+4.ant 填写bin 子目录。
+5.没有问题。就查看下系统，变量。
+6.其实setup.py。就是填写了，系统变量而已。手工填写完全一样效果。
+7.测试是否 ok.创建一个项目。cocos new MyfirstPro -p com.linson -l lua -d x:\temp
+8.在项目目录下。E:\temp\MyfirstPro\frameworks\runtime-src\proj.android  打包软件。
+9.mingling:cocos run -p andriod -ap (pfversion:19,24)
+
+9.版本 不一样。导致打包失败。
+10.可能是E:\cocosEv\android-sdk_r24.4.1\android-sdk-windows\platforms，没有任何平台版本。
+11.download 对应的sdk platforms version.
+19 有个错误 等下生成完。就出现。应该可能还没有生成。只是走一下过程
+如果还有错就应该版本还要更高一些。
+有可能19的 跟android-sdk_r24.4.1少了东西 。24的应该就没有问题因为这个是24的SDK先成COS
+恩。等下看看。
+其实用最新包也没有问题的。ANDROID的最新包都是向下的 有时候可能会停了几个
+。先这样。好的。兼容性 还是有的。尽量配开发版本 。移动开发坑很多 。
+
+
+
+vs配置。
+1.下载插件。lua babe.
+2.网狐的一些说明在这里。  E:\shoujiduan2\shoujiduan2\info
+3.安装插件。
+4.打开项目。配置项目属性。
+依次输入。
+E:\shoujiduan2\shoujiduan2\win32\GAME517roject.exe
+E:\shoujiduan2\shoujiduan2
+E:\shoujiduan2\shoujiduan2
+5.运行模拟器 
+
+
+
+
+
+--程序加载流程。
+--require ("app.MyApp"):create ():run()
+--1. the key "class" is defined in cicis\cocos2d\function.lua-->set appbase as base class.
+--2.AppBase define in packages\mvc\appbase.lua
+--3.:create ():run ()-->create() is defined in function .{ if no  create() then run ctor()}
+--4.appbase:ctor()->because  myapp is like contorl .so ctor() define model res , view res and defualt scene (defaultSceneName = "WelcomeScene",)
+--   and then call onCreate()(it is defined in derived class)
+--5.appbase:run()->self:enterScene(initSceneName)-->so it enterscene(defaultSceneName = "WelcomeScene",)
+--6.WelcomeScene is derived from ViewBase
+
+--so .main.lua --> addSearchPath and then call myapp.lua
+-- myapp.lua--> derived from appbase.lua.
+-->appbase.lua -->is base class which contain some function, run{enterscene},ctor{res path}.
+
+
+--目录结构：
+--base:                        登陆场景前的引导，包括游戏版本的检测和加载。
+--client:                      大厅总目录
+------------res:               资源文件
+------------src:               代码
+----------------external       扩展方法，头像显示以及不同平台的回调接口。
+----------------gamemodel      处理游戏服务器与客户端交互，具体作用：???
+------------header             通用的消息定义
+------------plaza              大厅        
+----------------models         models 层。
+----------------views          views 层。
+----------------privatemode    房卡
+--          command:           额外命令的脚本,资源更新等。
+--          game:              子游戏
+
+
+
+跟踪的时候，会发现。登录和一些其他数据，不是通过服务器完成胡。
+是这里。E:\website\WebSize\ 是通过webservices。来请求的。
+
